@@ -1,0 +1,68 @@
+.contact-section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.contact-section .content{
+    width: 85%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color:  #044697;
+}
+.contact-section .content .left {
+    width: 60%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-top-right-radius: 30px;
+    gap: 20px   ;
+    box-shadow: 0px 0px 5px 0px rgb(205, 202, 202);
+}
+.contact-section .content .left input{
+    width: 80%;
+    padding: 10px;
+}
+.contact-section .content .left textarea{
+    width: 80%;
+    padding: 10px;
+    height: 200px;
+}
+.contact-section .content .left button{
+    width: 200px;
+    padding: 10px;
+    color: white;
+    background-color: #044697;
+    border: none;
+    cursor: pointer;
+}
+.contact-section .content .right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-section .content .right .item{
+    color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    gap: 10px   ;
+}
+.contact-section .content .right .item img{
+    width: 65px;
+    height: 65px;
+    padding: 20px;
+  /*   background-color: #B5181D; */
+    filter: invert(1);
+}
