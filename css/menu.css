@@ -67,3 +67,22 @@ menu .container .menu-items{
     height: 25px;
     filter: invert(1);
 }
+.service-list{
+    position: absolute;
+    top: 100%;
+    left: 35%;
+    width: 200px !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #B5181D;
+    padding: 20px !important;
+    opacity: 0;
+    display: none;
+}
+.service-list li{
+    text-align: start !important;
+    width: 100%;
+  /*   border: 1px solid; */
+}

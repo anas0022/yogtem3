@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/home/style.css">
+    <link rel="stylesheet" href="css/about/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/about/welcome.css">
+
+    <link rel="stylesheet" href="css/home/contact.css">
+
+</head>
+
+<style>
+    .welcome-section{
+        padding: 40px;
+    }
+    .job-search-section {
+        background: linear-gradient(135deg, #002FEB 0%, #1a4fff 100%);
+        background-size: cover;
+        background-position: center;
+   /*      padding: 100px 0; */
+        text-align: center;
+        color: white;
+        position: relative;
+        padding: 30px;
+        overflow: hidden;
+    }
+
+    .job-search-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.1)"/></svg>');
+        opacity: 0.1;
+    }
+    
+    .job-search-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .job-search-container h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .job-search-container p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        opacity: 0.9;
+    }
+    
+    .search-form {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+    }
+    
+    .search-input,
+    .job-type-select,
+    .city-select {
+        padding: 15px 20px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        min-width: 200px;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .search-input:focus,
+    .job-type-select:focus,
+    .city-select:focus {
+        outline: none;
+        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .job-search-btn {
+        padding: 15px 30px;
+        background-color: white;
+        color: #002FEB;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .job-search-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .available-jobs {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #1a1a1a;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 50px;
+        font-size: 1.1rem;
+    }
+
+    .jobs-list {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .job-item {
+        background: white;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .job-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-main-info {
+        margin-bottom: 20px;
+    }
+
+    .job-main-info h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.3rem;
+        color: #1a1a1a;
+        font-weight: 600;
+    }
+
+    .location {
+        color: #666;
+        font-size: 0.95rem;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .job-salary {
+        font-size: 1.1rem;
+        color: #002FEB;
+        font-weight: 600;
+        margin: 15px 0;
+    }
+
+    .apply-btn {
+        padding: 12px 25px;
+        background-color: #002FEB;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        font-weight: 500;
+        width: 100%;
+        text-align: center;
+    }
+
+    .apply-btn:hover {
+        background-color: #001f9e;
+        transform: translateY(-2px);
+    }
+    select option{
+        color: black;
+    }
+
+    @media (max-width: 768px) {
+        .job-search-container h1 {
+            font-size: 2.5rem;
+        }
+
+        .search-form {
+            padding: 20px;
+        }
+
+        .search-input,
+        .job-type-select,
+        .city-select,
+        .job-search-btn {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .jobs-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<body>
+    <!-- menu container -->
+    <menu>
+        <div class="container">
+
+            <img src="images/logo.jpg" alt="" srcset="">
+            <div class="menu-items">
+                <ul>
+                    <li>
+                        <img src="images/icon/telephone.png" alt="" srcset="">
+                        0487-2320102,2320103
+                    </li>
+                    <li>
+                        <img src="images/icon/mail.png" alt="" srcset="">
+                        mail@yogloans.com
+                    </li>
+                </ul>
+                <ul>
+                    <li onclick="window.location.href='index.html'">Home</li>
+                    <li onclick="window.location.href='about.html'">About</li>
+                    <li class="services-link">Services</li>
+                    <ul class="service-list" style="    background-color: #B5181D;">
+                        <li onclick="window.location.href='goldloan.html'">Gold Loan</li>
+                        <li onclick="window.location.href='businessloan.html'">Business Loan</li>
+                        <li onclick="window.location.href='cdloan.html'">CD Loan</li>
+                        <li onclick="window.location.href='vehicle.html'">Vehicle Loan</li>
+                    </ul>
+                    <li onclick="window.location.href='investors.html'">Investors</li>
+                    <li onclick="window.location.href='online.html'">Online Services</li>
+                    <li onclick="window.location.href='policies.html'">Policies</li>
+                    <li onclick="window.location.href='career.html'">Career</li>
+                    <li onclick="window.location.href='csr.html'">CSR</li>
+                    <li onclick="window.location.href='contact.html'">Contact Us</li>
+                </ul>
+            </div>
+
+        </div>
+    </menu>
+
+<!-- 
+    <section class="welcome-section" style="background-image: url(images/welcome/policy.jpg);">
+        <div class="container">
+            <h1>Career</h1>
+            <div class="breadcrumb">
+                <a href="index.html">HOME</a>
+                <span class="separator">—</span>
+                <span class="current">Career</span>
+            </div>
+        </div>
+
+    </section> -->
+  
+        <!-- Job Search Section -->
+        <section class="job-search-section welcome-section"  style="background-image: url(images/welcome/policy.jpg);">
+            <div class="job-search-container" style="z-index: 2;">
+                <h1>Discover Your Dream Career with Us</h1>
+                <p>Be a part of our dynamic team and shape the future together.</p>
+                
+                
+                <div class="search-form">
+                    <input type="text" placeholder="Enter Keyword" class="search-input">
+                    <select class="job-type-select">
+                        <option value="">Job Type</option>
+                        <option value="full-time">Full Time</option>
+                        <option value="part-time">Part Time</option>
+                        <option value="contract">Contract</option>
+                        <option value="internship">Internship</option>
+                    </select>
+                    <select class="city-select">
+                        <option value="">City</option>
+                        <option value="mumbai">Kerala</option>
+                        <option value="delhi">Tamil Nadu</option>
+                        <option value="bangalore">Bangalore</option>
+                  <!--       <option value="chennai">Chennai</option> -->
+                    </select>
+                    <button class="job-search-btn">Job Search</button>
+                </div>
+                
+              <!--   <div class="key-words">
+                    <span>Key Word:</span>
+                    <a href="#" class="keyword-tag"># HTML</a>
+                    <a href="#" class="keyword-tag">#Design</a>
+                    <a href="#" class="keyword-tag"># Web Developer</a>
+                    <a href="#" class="keyword-tag"># Sale & Marketing</a>
+                </div>
+                <div class="advanced-search">
+                    <a href="#">advance search</a>
+                </div> -->
+            </div>
+        </section>
+        
+        <!-- Available Jobs Section -->
+        <section class="available-jobs">
+            <div class="container">
+                <h2 class="section-title">Top Jobs (Available)</h2>
+                <p class="section-subtitle">Listing released just when you visited our website.</p>
+                
+                <div class="jobs-list">
+                    <!-- Jobs Table Header -->
+               <!--      <div class="job-header">
+                        <div class="col-type">Job </div>
+                        <div class="col-salary">Salary</div>
+                        <div class="col-apply">Apply</div>
+                    </div> -->
+                    
+                    <!-- Job Item 1 -->
+                    <div class="job-item">
+                        <div class="job-main-info">
+                            <h3>Senior Software Engineer</h3>
+                            <p class="location">Kerala, Thrissur</p>
+                            <!-- <button class="apply-btn">Apply Now</button> -->
+                        </div>
+                        <div class="job-type">
+                            <div class="job-salary">$3000- $4500</div>
+                        <!--     <span class="job-tag morning">Morning</span> -->
+                        </div>
+                  <button class="apply-btn">Apply Now</button> 
+                    </div>
+
+                    <!-- Job Item 2 -->
+                    <div class="job-item">
+                        <div class="job-main-info">
+                            <h3>Financial Analyst</h3>
+                            <p class="location">Kerala, Thrissur</p>
+                            <!-- <button class="apply-btn">Apply Now</button> -->
+                        </div>
+                        <div class="job-type">
+                            <div class="job-salary">$3000- $4500</div>
+                        <!--     <span class="job-tag morning">Morning</span> -->
+                        </div>
+                  <button class="apply-btn">Apply Now</button> 
+                    </div>
+
+
+                    <!-- Job Item 3 -->
+                    <div class="job-item">
+                        <div class="job-main-info">
+                            <h3>Office Staff</h3>
+                            <p class="location">Kerala, Thrissur</p>
+                            <!-- <button class="apply-btn">Apply Now</button> -->
+                        </div>
+                        <div class="job-type">
+                            <div class="job-salary">$3000- $4500</div>
+                        <!--     <span class="job-tag morning">Morning</span> -->
+                        </div>
+                  <button class="apply-btn">Apply Now</button> 
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-row">
+                    <!-- Company Info Section -->
+                    <div class="footer-col">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="images/logo.jpg" alt="Yogakshemam Loans Ltd Logo">
+                                </a>
+                            </div>
+                            <div class="footer-text">
+                                <p>To emerge as the most trusted financial solution provider in India, with special focus on emerging segments of society, through a nationwide, efficient and service oriented network.</p>
+                            </div>
+                            <div class="footer-social">
+                                <h6>Connect With Us</h6>
+                                <div class="social-icons">
+                                    <a href="https://www.facebook.com/share/18qcUVv3fJ/?mibextid=wwXIfr" target="_blank">
+                                        <img src="images/icon/facebook.png" alt="Facebook">
+                                    </a>
+                                    <a href="https://www.instagram.com/yogloansfinance?igsh=djhqZGI0dG92bGI0" target="_blank">
+                                        <img src="images/icon/social-media.png" alt="Instagram">
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/yogloans" target="_blank">
+                                        <img src="images/icon/linkedin-logo.png" alt="LinkedIn">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links Section -->
+                    <div class="footer-col">
+                        <div class="footer-widget">
+                            <h5 class="footer-heading">Quick Links</h5>
+                            <div class="footer-links-container">
+                                <div class="footer-links-col">
+                                    <ul class="footer-links">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="investors.html">Investors</a></li>
+                                        <li><a href="online-services.html">Online Services</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer-links-col">
+                                    <ul class="footer-links">
+                                        <li><a href="policies.html">Policies</a></li>
+                                        <li><a href="csr.html">CSR</a></li>
+                                        <li><a href="career.html">Career</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Section -->
+                    <div class="footer-col">
+                        <div class="footer-widget">
+                            <h5 class="footer-heading">Newsletter</h5>
+                            <p>Stay updated with our latest news and offers.</p>
+                            <form class="newsletter-form">
+                                <div class="form-group">
+                                    <input type="email" placeholder="Enter your email">
+                                    <button type="submit">
+                                        <img src="images/icons/send.png" alt="Subscribe">
+                                    </button>
+                                </div>
+                            </form>
+                            <p class="privacy-text">By subscribing, you agree to our Privacy Policy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="copyright-area">
+            <div class="footer-container">
+                <div class="copyright-row">
+                    <div class="copyright-text">
+                        <p>&copy; 2025 YOGAKSHEMAM LOANS Ltd. All rights reserved.</p>
+                    </div>
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="loans.html">Gold Loan</a></li>
+                            <li><a href="vehicle.html">Vehicle Loan</a></li>
+                            <li><a href="personal.html">Business Loan</a></li>
+                            <li><a href="cd.html">CD Loan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
