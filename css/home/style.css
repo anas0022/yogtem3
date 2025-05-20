@@ -299,7 +299,11 @@
 .footer-menu a:hover {
     color: #B5181D;
 }
-
+.newsletter-form button img{
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+}
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .footer-col {
@@ -342,7 +346,7 @@
         font-size: 1rem;
     }
     .contact-section .content {
-        width: 100%;
+        width: 100% !important;
         flex-direction: column;
         background-color: white !important;
     }
@@ -448,6 +452,13 @@
         width: 100% !important;
         background-color: #B5181D !important;
     }
-
+#email-sub{
+    display: none  !important;
+}
+.newsletter-form input {
+    width: 80%;
+}.newsletter-form button {
+    width: 20%;
+}
 }
 
