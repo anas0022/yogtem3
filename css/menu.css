@@ -93,6 +93,62 @@ menu .container .menu-items{
 .res-menu{
     display: none;
 }
+@media (max-width:950px){
+    menu{
+        height: 60px !important;
+
+    }
+    menu .container{
+        height: 60px !important;
+    }
+    menu .container img {
+        height: 100%;
+    }
+    .menu-items ul:nth-child(2){
+        width: 100%;
+        height: 30px;
+    }
+    .menu-items ul:nth-child(1){
+        width: 100%;
+        height: 30px;
+    }
+    .menu-items ul li {
+        font-size: .5rem;
+    }
+    .menu-items ul li img {
+        width: 15px;
+        height: 15px;
+    }
+  /*   .subtitle {
+        font-size: 1rem !important;
+    }
+    .welcome-content h1 {
+        font-size: 1.2rem !important;
+    }
+    .welcome-content p {
+        font-size: .9rem    !important;
+    }
+    .loan-frames {
+        width: 50% !important;
+    }
+    .loan-frame.active {
+        width: 200px !important;
+        height: 250px !important;
+    }
+    .loan-frame {
+        width: 20% !important;
+        height: 30% !important;
+    }
+    .welcome-section .container {
+        width: 100% !important;
+    }
+    .content-wrapper {
+        width: 80%  !important;
+    }
+    .welcome-content {
+        width: 70% !important;
+    } */
+}
 @media (max-width:780px){
     menu{
         height: 60px;
