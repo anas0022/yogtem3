@@ -245,68 +245,58 @@
     width: 300px;
 
 }
-@media (max-width: 1200px) {
+
+@media(max-width:780px  ){
+    .welcome-section{
+        height: 600px;
+        width: 100%;
+       /*  padding: 20px; */
+    }
     .welcome-section .container {
-        max-width: 100%;
-        padding: 0 40px;
+        flex-direction: column-reverse;
+        width: 100% !important;
     }
-
-    .loan-frame {
-        width: 160px;
-        height: 320px;
-    }
-
-    .welcome-content h1 {
-        font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .welcome-section .container {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 20px;
-    }
-    
-    .welcome-content {
-        max-width: 600px;
-        margin-bottom: 60px;
-        padding-right: 0;
-    }
-    
-    .loan-frames {
-        justify-content: center;
-        max-width: 100%;
-        overflow-x: auto;
-        padding: 20px 0;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .loan-frame {
-        width: 140px;
-        height: 280px;
-    }
-}
-
-@media (max-width: 480px) {
-    .welcome-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .loan-frame {
-        width: 120px;
-        height: 240px;
-    }
-    
-    .loan-frame-content {
-        bottom: 30px;
-    }
-    
-    .loan-frame-content h3 {
+    .subtitle {
         font-size: 1rem;
     }
-    
-    .loan-frame-content p {
-        font-size: 0.8rem;
+    .welcome-content h1 {
+       font-size:  1.8rem;
     }
-} 
+    
+    .welcome-content p {
+        font-size: 1rem;
+    }
+    .welcome-content {
+        padding-right: 0px;
+        gap: 0px    ;
+        height: 48%;
+        margin-top: 20px;
+ 
+        width: 100%;
+        padding: 0px;
+    }
+    .btn-primary {
+        width: 70%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        font-size: 1rem;
+    }
+    .loan-frame {
+        width: 10%;
+    }
+    .loan-frame {
+        height: 50px;
+        border-radius: 5px;
+    }
+    .loan-frame.active {
+        width: 60%;
+        height: 200px;
+    }
+    .loan-frame-content p {
+        color: #ffffff99;
+        font-size: 0.4rem;
+        line-height: 1.4;
+      }
+}

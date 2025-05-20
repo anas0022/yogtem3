@@ -98,3 +98,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
 });
+
+var menu = document.getElementsByClassName('res-menu')[0];
+var cover = document.getElementsByClassName('cover')[0];
+var resmenu = document.getElementById('res-menu');
+
+var close = document.getElementById('close');
+
+resmenu.onclick = function() {
+    menu.style.transform = 'translateX(0px)';
+    cover.style.display="flex";
+};
+
+close.onclick= function(){
+    menu.style.transform ='translateX(400px)';
+    cover.style.display='none';
+}
+

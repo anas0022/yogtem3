@@ -318,4 +318,136 @@
     .footer-menu ul {
         justify-content: center;
     }
+    .about-section .content h2{
+        width: auto;
+        font-size: .9rem;
+    }
+    .about-section .content p {
+        font-size: .9rem;
+    }.about-section .content button {
+        width: 50%;
+    }
+    .client-counts .content {
+        flex-direction: column;
+    }
+    .client-counts .content .item {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid;
+        margin-bottom: 20px;
+    }.client-counts .content .item p:nth-child(2) {
+        font-size: .9rem;
+    }
+    .client-counts .content .item p:nth-child(1) {
+        font-size: 1rem;
+    }
+    .contact-section .content {
+        width: 100%;
+        flex-direction: column;
+        background-color: white !important;
+    }
+    .contact-section .content .left {
+        width: 100% !important;
+        border-top-right-radius: 0px !important;
+    }
+    .contact-section .content .right {
+        background-color: #B5181D;
+        width: 100% !important;
+    }
+    .contact-section .content .right p{
+        font-size: 12px;
+    }
+    .contact-section .content .right .item img {
+        width: 30px;
+        height: 30px;
+    }
+    .footer-widget {
+        padding: 0px;
+    }
+    .feature-image {
+        height: 200px !important;
+    }
+    .feature-content h2 {
+        font-size: .9rem    !important;
+        line-height: 1 !important;
+    }
+    .features-container {
+        gap: 0px    !important;
+    }
+    .testimonials-header h3 {
+        font-size: .9rem !important;
+    }
+    .testimonials-title h2 {
+        font-size: 1.2rem !important;
+    }
+    .testimonial-info h4 {
+        font-size: .9rem !important;
+    }
+    .testimonial-info p {
+        font-size: .9rem !important;
+    }
+    .testimonial-text {
+        font-size: .9rem !important;
+    }
+    .quote-icon {
+        display: none;
+    }
+    .directors .content {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .welcome-section h1 {
+        font-size: 1.8rem !important;
+    }
+    .services-card .content {
+        flex-direction: column;
+    }
+    .job-search-section {
+        height: 500px !important;
+    }
+    .job-search-container h1 {
+        font-size: 1.3rem;
+    }
+    .job-search-container p {
+        font-size: .9rem    ;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .section-subtitle {
+        font-size: .9rem;
+    }
+    .job-main-info h3 {
+        font-size: .9rem    ;
+    }
+    .location {
+        font-size: .7rem    ;
+    }
+    .job-salary {
+        font-size: .7rem    ;
+    }
+    .apply-btn {
+        padding: 0px;
+        width: 50%;
+        font-size: .7rem    ;
+        height: 40px;
+    }
+    .contact-info-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+  
+    .contact-section {
+        padding: 0px;
+
+    }
+    .contact-info-item p, h3 {
+        font-size: .9rem;
+    }
+    .contact-info-item {
+        width: 100% !important;
+        background-color: #B5181D !important;
+    }
+
 }
+
