@@ -305,7 +305,7 @@
     filter: invert(1);
 }
 /* Responsive Styles */
-@media screen and (max-width: 768px) {
+@media  (max-width: 858px) {
     .footer-col {
         flex: 100%;
     }
@@ -461,7 +461,7 @@
     width: 20%;
 }
 .job-search-container {
-    height: 600px;
+    height: 650px;
     margin-top: 0px;
     display: flex;
     justify-content: center;
